@@ -1,0 +1,5 @@
+library("sqldf")
+data <- read.csv.sql("household_power_consumption.txt",sep=";",sql = "select * from file where  Date in ('1/2/2007','2/2/2007')")
+png(file="plot1.png")
+hist(data$Global_active_power,xlab="Global Active Power (kilowatts)",main = "Global Active Power",col="red")
+dev.off()
